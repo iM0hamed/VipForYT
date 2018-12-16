@@ -1,38 +1,47 @@
-// See http://iphonedevwiki.net/index.php/Logos
-
-#if TARGET_OS_SIMULATOR
-#error Do not support the simulator, please use the real iPhone Device.
-#endif
-
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-%hook ClassName
 
-+ (id)sharedInstance
-{
-	%log;
+%config(generator=internal)
 
-	return %orig;
+//رساله الترحيب للمستخدم
+
+%hook YTAppDelegate
+- (void)appDidBecomeActive:(id)arg1{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"VipForYT By @ipaApps" message:@"This Tweak for Play YouTube Videos in Background And Remove Ads From The Videos"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Thanks!"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
+%end
 
-- (void)messageWithNoReturnAndOneArgument:(id)originalArgument
-{
-	%log;
 
-	%orig(originalArgument);
-	
-	// or, for exmaple, you could use a custom value instead of the original argument: %orig(customValue);
+//تشغيل الفيديوهات في الخلفيه
+
+%hook YTSingleVideoController
+-(bool) isCurrentlyBackgroundable {
+return TRUE;
 }
+%end
 
-- (id)messageWithReturnAndNoArguments
-{
-	%log;
 
-	id originalReturnOfMessage = %orig;
-	
-	// for example, you could modify the original return value before returning it: [SomeOtherClass doSomethingToThisObject:originalReturnOfMessage];
+//حذف اعلانات الفيديوهات
 
-	return originalReturnOfMessage;
+%hook YTVASTAd
+-(bool)isForecastingAd {
+return NO;
 }
+%end
 
+%hook YTVASTAd
+-(bool)isSkippable {
+return YES;
+}
+%end
+
+%hook YTIPlayerResponse
+-(bool)isMonetized {
+    return NO;
+}
 %end

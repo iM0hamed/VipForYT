@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5463D31421BBB5B8009B8A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5463D31321BBB5B8009B8A7F /* UIKit.framework */; };
 		5463D31621BBB5B8009B8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5463D31521BBB5B8009B8A7F /* Foundation.framework */; };
-		5463D31821BBB5B8009B8A7F /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5463D31721BBB5B8009B8A7F /* CydiaSubstrate.framework */; };
 		5463D32121BBB5B8009B8A7F /* VipForYT.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5463D32021BBB5B8009B8A7F /* VipForYT.mm */; };
 /* End PBXBuildFile section */
 
@@ -17,10 +16,9 @@
 		5463D31021BBB5B8009B8A7F /* VipForYT.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = VipForYT.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		5463D31321BBB5B8009B8A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5463D31521BBB5B8009B8A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		5463D31721BBB5B8009B8A7F /* CydiaSubstrate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CydiaSubstrate.framework; path = Library/Frameworks/CydiaSubstrate.framework; sourceTree = DEVELOPER_DIR; };
 		5463D31C21BBB5B8009B8A7F /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
 		5463D31E21BBB5B8009B8A7F /* VipForYT-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VipForYT-Prefix.pch"; sourceTree = "<group>"; };
-		5463D31F21BBB5B8009B8A7F /* VipForYT.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = VipForYT.xm; sourceTree = "<group>"; };
+		5463D31F21BBB5B8009B8A7F /* VipForYT.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; path = VipForYT.xm; sourceTree = "<group>"; };
 		5463D32021BBB5B8009B8A7F /* VipForYT.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VipForYT.mm; sourceTree = "<group>"; };
 		5463D32521BBB5B8009B8A7F /* VipForYT.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = VipForYT.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/VipForYT.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,7 +30,6 @@
 			files = (
 				5463D31421BBB5B8009B8A7F /* UIKit.framework in Frameworks */,
 				5463D31621BBB5B8009B8A7F /* Foundation.framework in Frameworks */,
-				5463D31821BBB5B8009B8A7F /* CydiaSubstrate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +58,6 @@
 			children = (
 				5463D31321BBB5B8009B8A7F /* UIKit.framework */,
 				5463D31521BBB5B8009B8A7F /* Foundation.framework */,
-				5463D31721BBB5B8009B8A7F /* CydiaSubstrate.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,6 +297,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -308,12 +306,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VipForYT/VipForYT-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
-				MonkeyDevDeviceIP = "";
-				MonkeyDevDevicePassword = "";
-				MonkeyDevDevicePort = "";
+				MonkeyDevDeviceIP = 192.168.1.140;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 22;
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
@@ -326,6 +325,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,12 +334,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VipForYT/VipForYT-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
-				MonkeyDevDeviceIP = "";
-				MonkeyDevDevicePassword = "";
-				MonkeyDevDevicePort = "";
+				MonkeyDevDeviceIP = 192.168.1.140;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 22;
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
