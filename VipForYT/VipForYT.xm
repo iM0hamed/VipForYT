@@ -8,11 +8,15 @@
 
 %hook YTAppDelegate
 - (void)appDidBecomeActive:(id)arg1{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"VipForYT By @ipaApps" message:@"This Tweak for Play YouTube Videos in Background And Remove Ads From The Videos"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Thanks!"
-                                          otherButtonTitles:nil];
-    [alert show];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults boolForKey:@"notFirstRun"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"VipForYT By @ipaApps" message:@"This Tweak for Play YouTube Videos in Background And Remove Ads From The Videos"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Thanks!"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [defaults setBool:YES forKey:@"notFirstRun"];
+    }
 }
 %end
 
