@@ -1,8 +1,8 @@
 Package: com.ipaapps.VipForYT.VipForYT
 Name: VipForYT
-Version: 0.2
+Version: 0.3
 Description: 
-Section: iOS 11
+Section: My Tweaks
 Depends: firmware (>= 5.0), mobilesubstrate
 Conflicts: 
 Replaces: 

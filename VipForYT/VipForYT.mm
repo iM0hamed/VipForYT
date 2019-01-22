@@ -50,7 +50,7 @@ free(_methods);
 _searchedClass = class_getSuperclass(_searchedClass);
 }
 }
-@class YTIPlayerResponse; @class YTVASTAd; @class YTAppDelegate; @class YTSingleVideoController; 
+@class YTSingleVideoController; @class YTIPlayerResponse; @class YTAppDelegate; @class YTVASTAd; 
 static Class _logos_superclass$_ungrouped$YTAppDelegate; static void (*_logos_orig$_ungrouped$YTAppDelegate$appDidBecomeActive$)(_LOGOS_SELF_TYPE_NORMAL YTAppDelegate* _LOGOS_SELF_CONST, SEL, id);static Class _logos_superclass$_ungrouped$YTSingleVideoController; static bool (*_logos_orig$_ungrouped$YTSingleVideoController$isCurrentlyBackgroundable)(_LOGOS_SELF_TYPE_NORMAL YTSingleVideoController* _LOGOS_SELF_CONST, SEL);static Class _logos_superclass$_ungrouped$YTVASTAd; static bool (*_logos_orig$_ungrouped$YTVASTAd$isForecastingAd)(_LOGOS_SELF_TYPE_NORMAL YTVASTAd* _LOGOS_SELF_CONST, SEL);static bool (*_logos_orig$_ungrouped$YTVASTAd$isSkippable)(_LOGOS_SELF_TYPE_NORMAL YTVASTAd* _LOGOS_SELF_CONST, SEL);static Class _logos_superclass$_ungrouped$YTIPlayerResponse; static bool (*_logos_orig$_ungrouped$YTIPlayerResponse$isMonetized)(_LOGOS_SELF_TYPE_NORMAL YTIPlayerResponse* _LOGOS_SELF_CONST, SEL);
 
 #line 9 "/Users/mohamedtanbakji/Desktop/Xcode-Projects/VipForYT/VipForYT/VipForYT.xm"
